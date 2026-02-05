@@ -1,0 +1,136 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.wrapper {
+  position: relative;              /* correct property */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  aspect-ratio: 263 / 216;
+
+  background-color: rgb(1, 130, 243);
+  background-image: url("./assets/images/mg2_msx/MSX_Codec_v3_NoBg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  padding: 1%;
+  box-sizing: border-box;
+
+  border: 2px solid rgb(255, 255, 255);            /* visible border */
+}
+
+/* CODEC SLOT = positioning only */
+.codec-slot-l, .codec-slot-r {
+  position: absolute;
+  width: 200px;          /* frame size */
+  aspect-ratio: 1 / 1;
+}
+
+/* Slot placement */
+.codec-slot-l {
+  top: 25%;
+  left: 16%;
+}
+
+.codec-slot-r {
+  top: 25%;
+  right: 16%;
+}
+
+/* FRAME fills slot */
+.codec-frame, .codec-portrait {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* PORTRAIT lives INSIDE frame */
+.codec-frame {
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.codec-portrait {
+  width: 87%;                  /* slightly smaller than frame */
+  height: auto;
+  z-index: 2;
+}
+
+.timer-display{
+  position: absolute;
+  top:5%;
+  left:50%;
+  transform:translateX(-50%);
+  font-family: "Digital";
+  color:rgb(0, 0, 0);
+  font-size: 4rem;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 9%;            /* adjust distance from bottom */
+  display: flex;
+  gap: 1rem;              /* spacing between buttons */
+}
+
+h1 {
+  position:absolute;
+  top:-17%;
+  left:10%;
+  font-family: "Jersey25";
+  font-size: 2rem;
+}
+
+.text-container {
+  position: absolute;
+  width: 200px;          /* frame size */
+  aspect-ratio: 1 / 1;
+  bottom:5%;
+}
+
+.textBlock {
+  position: absolute;
+  width:700px;
+  bottom:20%;
+  left:-125%
+}
+
+
+button {
+  font-family: "Jersey25";
+  /* border-radius: 08px;
+  border: 4px solid transparent; */
+  padding: 50px 50px; /*px is a fixed size, won't scale with font */
+  margin: 200px;
+  margin-top: 1%;
+  font-size: 2rem; /* rem can increase without moving wrapper */
+  font-weight: 500º;
+  background-image: url("./assets/images/mg2_msx/ui_elements/button.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: border-color 0.50s;
+}
+
+
+button:hover {
+  border-color: #ffffff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+
+
+

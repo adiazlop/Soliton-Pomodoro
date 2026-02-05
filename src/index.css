@@ -1,0 +1,149 @@
+/*
+==================================================
+index.css — Best-Practice Responsibility & Scope
+==================================================
+
+PURPOSE
+-------
+index.css is reserved for GLOBAL, DOCUMENT-LEVEL STYLES.
+Everything defined here applies to the entire application,
+independent of React components or screens.
+
+This file must NEVER contain layout logic tied to a specific
+component (timers, wrappers, buttons, HUD elements, etc.).
+
+
+WHAT BELONGS HERE
+-----------------
+1. Font declarations
+- @font-face rules
+- Global font stacks
+
+2. Global CSS variables
+- Colors
+- Spacing units
+- Z-index layers
+- Theme primitives
+
+3. Root & document defaults
+- :root typography
+- html / body sizing
+- Color scheme
+
+4. Resets & normalization
+- margin: 0
+- box-sizing defaults
+- font smoothing
+
+5. Global element styles
+- body
+- a
+- button (base style only)
+- headings (generic, not component-specific)
+
+6. Accessibility & browser behavior
+- prefers-color-scheme
+- focus outlines
+- text rendering options
+
+
+WHAT DOES NOT BELONG HERE
+-------------------------
+✗ Component positioning (absolute / relative layouts)
+✗ Background images for specific screens
+✗ UI coordinates (top / left / transform)
+✗ Game HUD / skin / frame logic
+✗ Visual composition of the app
+✗ Any class used by only one component
+
+
+DESIGN PHILOSOPHY
+-----------------
+index.css defines the RULES OF THE WORLD.
+App.css (and component CSS) define WHAT EXISTS IN IT.
+
+If removing a component does NOT break the style,
+it probably belongs here.
+If removing a component DOES break the style,
+it does NOT belong here.
+
+
+COMMON MISTAKES TO AVOID
+------------------------
+• Turning index.css into a “dumping ground”
+• Absolute positioning relative to body
+• Component-specific classes
+• Pixel-based UI alignment
+
+
+RESULT
+------
+Following this separation:
+• Improves maintainability
+• Prevents layout bugs
+• Makes skins & themes scalable
+• Matches professional front-end architecture
+
+==================================================
+*/
+
+@font-face {
+  font-family: "Jersey25";
+  src: url("./assets/fonts/Jersey_25/Jersey25-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Digital";
+  src: url("./assets/fonts/yoster-island/yoster.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  font-family: system-ui, "Jersey25", "Digital", Avenir, Helvetica, Arial, sans-serif;
+  line-height: 12.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #ffffff00;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  body {
+  margin: 0;
+  min-width: 263px;
+  min-height: 216px;
+  width: 100vw;
+  height: 100vh;
+}
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #0f4ab1;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
