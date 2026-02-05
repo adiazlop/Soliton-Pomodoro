@@ -7,6 +7,7 @@ This is a personal project, as I'm an avid user of the Pomodoro Technique.The id
 Altough its a WIP, there are several milestones I'd like to achieve.
 
 ## Milestones
+
 - Add full cicle (25 min, 5 min break)
 - Gamification (Each cicle you earn an item for the game)
 - Change Character Icons (Holly, Fox, Campbell, etc) 
@@ -20,10 +21,11 @@ Altough its a WIP, there are several milestones I'd like to achieve.
 Metal Gear Solid Skin:
 https://alexgrienudling.com/work/metal-gear-solid-codec-portraits/
 
+Metal Gear 2 Solid Snake Sprites:
+https://www.spriters-resource.com/msx2/mg2solidsnake/
 
-Metal Gear 2 Solid Snake Sprites: 
-
-CRT Shader: https://www.npmjs.com/package/vault66-crt-effect
+CRT Shader:
+https://www.npmjs.com/package/vault66-crt-effect
 
 ## Updates
 
