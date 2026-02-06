@@ -14,7 +14,8 @@ Altough its a WIP, there are several milestones I'd like to achieve.
 - Metal Gear Solid Codecs Skin (MGS1, 2, Ghost Babel)
 - Database of time inverted on the pomodoro timer.
 - App Store packaging for Android, Linux and Windows using Tauri or Electron. 
-- Animations, sounds and music integration. 
+- Animations, sounds and music integration.
+- Dialogues and text pop up
 
 ## Image Sources
 
