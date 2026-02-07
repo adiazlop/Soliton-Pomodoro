@@ -11,7 +11,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
   aspect-ratio: 263 / 216;
 
   background-color: rgb(1, 130, 243);
@@ -44,23 +43,36 @@
   right: 16%;
 }
 
-/* FRAME fills slot */
+/*TESTED CRT SHADER*/
+.codec-slot-l,
+.codec-slot-r {
+  position: absolute;
+  width: 200px;
+  aspect-ratio: 1 / 1;
+}
+
+.crt-box {
+  width: 180px;
+  height: 260px;
+  position: relative;
+}
+
 .codec-frame, .codec-portrait {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 55%;
   transform: translate(-50%, -50%);
 }
-/* PORTRAIT lives INSIDE frame */
+
 .codec-frame {
-  width: 100%;
-  height: auto;
+  width: 110%;
+  height: 100%;
   z-index: 1;
 }
 
 .codec-portrait {
-  width: 87%;                  /* slightly smaller than frame */
-  height: auto;
+  width: 90%;                  /* slightly smaller than frame */
+  height: 87%;
   z-index: 2;
 }
 
@@ -81,10 +93,24 @@
   gap: 1rem;              /* spacing between buttons */
 }
 
+.mode-button-container {
+  position: absolute;
+  bottom: 2%;
+  left:19%;            /* adjust distance from bottom */
+  display: flex;              /* spacing between buttons */
+}
+
+.button,
+.mode-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 h1 {
   position:absolute;
   top:-17%;
-  left:10%;
+  left:1%;
   font-family: "Jersey25";
   font-size: 2rem;
 }
@@ -103,7 +129,6 @@ h1 {
   left:-125%
 }
 
-
 button {
   font-family: "Jersey25";
   /* border-radius: 08px;
@@ -112,7 +137,7 @@ button {
   margin: 200px;
   margin-top: 1%;
   font-size: 2rem; /* rem can increase without moving wrapper */
-  font-weight: 500º;
+  font-weight: normal;
   background-image: url("./assets/images/mg2_msx/ui_elements/button.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -121,6 +146,22 @@ button {
   transition: border-color 0.50s;
 }
 
+.mode-button {
+  font-family: "Jersey25";
+  border-radius: 08px;
+  border: 1px solid transparent;
+  padding: 8px 50px; /*px is a fixed size, won't scale with font */
+  margin: 10px;
+  margin-top: 1%;
+  font-size: 1em; /* rem can increase without moving wrapper */
+  font-weight: normal;
+  background-image: url("./assets/images/mg2_msx/ui_elements/mode-button.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: border-color 0.50s;
+}
 
 button:hover {
   border-color: #ffffff;

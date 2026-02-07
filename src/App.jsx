@@ -14,8 +14,11 @@ function App() {
   // CONSTANTS & STATE
   // ------------------------------
   const INITIAL_TIME = 1500; // 25 minutes in seconds
+  const SHORT_BREAK = 300; // 5 minutes in seconds
+  const LONG_BREAK = 1800; //30 minutes ins seconds
   const [timeLeft, setTimeLeft] = useState(INITIAL_TIME);// Holds the current countdown time (in seconds)
   const [isRunning, setIsRunning] = useState(false);   // Tracks if the timer is currently running
+
   // ------------------------------
   // FUNCTIONS
   // ------------------------------
@@ -27,6 +30,16 @@ function App() {
   function stopTimer() {
     setIsRunning(false); // Stop the timer
     setTimeLeft(INITIAL_TIME); // Reset to initial time
+  }
+
+  function shorBreakTimer() {
+  setIsRunning(false);
+  setTimeLeft(SHORT_BREAK);
+  }
+
+  function longBreakTimer(){
+  setIsRunning(false);
+  setTimeLeft(LONG_BREAK);
   }
   // ------------------------------
   // EFFECT: Countdown logic
@@ -58,7 +71,7 @@ function App() {
   // ------------------------------
   return (
     <CRTEffect preset="minimal"><div className="wrapper">
-      <h1>Soliton Pomodoro Timer</h1>
+      {/* <h1>Soliton Pomodoro Timer</h1> */}
       {/* Timer display */}
       {/* <div className='codec-portrait-container'>
       </div> */}
@@ -66,16 +79,24 @@ function App() {
         {minutes}:{seconds}
       </div>
       {/* LEFT CODEC SLOT  <img> */}
-      <div className="codec-slot-l">
-      <img src={codec} alt="Codec L" className="codec-frame" />
-      <img src={portraitSnake} alt="Snake" className="codec-portrait"/>
-      </div>
+
+<div className="codec-slot-l">
+  <CRTEffect preset="fallout" sweepDuration={5} enableFlicker={false}>
+    <div className="crt-box">
+      <img src={codec} className="codec-frame" />
+      <img src={portraitSnake} className="codec-portrait" />
+    </div>
+  </CRTEffect>
+</div>
+
       {/* RIGHT CODEC SLOT  <img> */}
       <div className="codec-slot-r">
+      <CRTEffect preset="vt100" enableSweep={true} sweepDuration={5} enableFlicker={true} ><div className="crt-box">
       <img src={codec} alt="Codec R" className="codec-frame" />
       <img src={portraitFox} alt="Fox" className="codec-portrait" />
       <img src={portraitHolly} alt="Holly" className="codec-portrait" />
       <img src={portraitCampbell} alt="Campbell" className="codec-portrait" />
+      </div></CRTEffect>
       </div>
 
       {/* Buttons & Container*/}
@@ -87,6 +108,24 @@ function App() {
           STOP
         </button>
       </div>
+
+      {/* Mode Buttons & Container*/}
+      <div className="mode-button-container">
+        <button className="mode-button" onClick={stopTimer}>
+        POMODORO
+        </button>
+        <button className="mode-button" onClick={shorBreakTimer}>
+          SHORT BREAK
+        </button>
+        <button className="mode-button" onClick={longBreakTimer}>
+          LONG BREAK
+        </button>
+        <button className="mode-button" onClick={longBreakTimer}>
+          SETTINGS
+        </button>
+      </div>
+
+
       {/* TEXT CONTAINER*/}
       <div className="text-container">
         <img src={textBlock} className="textBlock" alt="Text Block" />
