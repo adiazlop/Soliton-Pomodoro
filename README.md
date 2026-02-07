@@ -8,7 +8,7 @@ Altough its a WIP, there are several milestones I'd like to achieve.
 
 ## Milestones
 
-- Add full cicle (25 min, 5 min break)
+- ✅ Add full cicle (25 min, 5 min break)
 - Gamification (Each cicle you earn an item for the game)
 - Change Character Icons (Holly, Fox, Campbell, etc) 
 - Metal Gear Solid Codecs Skin (MGS1, 2, Ghost Babel)
