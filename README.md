@@ -1,6 +1,6 @@
 <h1 align="center">Soliton Pomodoro</h1>
 
-<p align="center"><img src = /src/assets/images/screenshots/Version_0.1.png width="300"> </p>
+<p align="center"><img src = Soliton_v.1.gif width="300"> </p>
 
 This is a personal project, as I'm an avid user of the Pomodoro Technique.The idea was to create a Pomodoro Timer tailored for my me and my girlfriend, while I practiced React and JavaScript. I hope you enjoy it.
 
